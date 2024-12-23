@@ -11,7 +11,7 @@ public class Exercise1 {
 
         // Print all numbers in the intNumbersStream stream
         // TODO: Write code here
-//        StreamSources.intNumbersStream().toList().forEach(System.out::println);
+//        StreamSources.intNumbersStream().forEach(System.out::println);
 
         // Print numbers from intNumbersStream that are less than 5
         // TODO: Write code here
@@ -39,6 +39,13 @@ public class Exercise1 {
 
         // Print first names in userStream for users that have IDs from number stream
         // TODO: Write code here
+        // flatMap approach
+//        StreamSources.intNumbersStream()
+//                .flatMap(integer -> StreamSources.userStream().filter(user -> user.getId() == integer))
+//                .map(User::getId)
+//                .forEach(System.out::println);
+
+        // this set based approach is better for scalability
         Set<Integer> idSet = StreamSources.intNumbersStream()
                 .collect(Collectors.toSet());
 
@@ -47,8 +54,9 @@ public class Exercise1 {
                 .map(User::getFirstName)
                 .forEach(System.out::println);
 
+        // any match
 //        StreamSources.userStream()
-//                .filter(user -> StreamSources.intNumbersStream().anyMatch(integer -> integer == user.getId()))
+//                .filter(user -> StreamSources.intNumbersStream().anyMatch(id -> id.equals(user.getId())))
 //                .map(User::getFirstName)
 //                .forEach(System.out::println);
     }
