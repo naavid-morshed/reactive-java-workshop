@@ -1,7 +1,5 @@
 package io.javabrains.reactiveworkshop;
 
-import reactor.core.publisher.Flux;
-
 import java.io.IOException;
 
 public class Exercise2 {
@@ -15,8 +13,8 @@ public class Exercise2 {
         ReactiveSources.intNumbersFlux().subscribe(System.out::println);
 
         // breakdown of top code
-        final Flux<Integer> integerFlux = ReactiveSources.intNumbersFlux();
-        integerFlux.subscribe(System.out::println);
+//        final Flux<Integer> integerFlux = ReactiveSources.intNumbersFlux();
+//        integerFlux.subscribe(System.out::println);
 
         // Print all users in the ReactiveSources.userFlux stream
         // TODO: Write code here
