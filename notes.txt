@@ -1,0 +1,1 @@
+1. flux is available over time, all of streams values are available at once.
