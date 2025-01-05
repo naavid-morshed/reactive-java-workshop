@@ -13,7 +13,6 @@ public class Exercise3 {
         // into a List and print the list and its size
         // TODO: Write code here
         final List<Integer> list = ReactiveSources.intNumbersFlux().toStream().toList();
-
         System.out.println("List is : " + list);
         System.out.println(list.size());
 
