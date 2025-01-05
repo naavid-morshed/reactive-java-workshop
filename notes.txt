@@ -1,1 +1,21 @@
 1. flux is available over time, all of streams values are available at once.
+
+2. Flux returns 0-N items over time, Mono returns 0 or 1 items.
+
+3. Using block() returns value from mono.
+
+4. blockFirst() and blockLast() used on Flux.
+
+5. // just like RxJS
+   ReactiveSources.intNumberMono().subscribe(
+           integer -> System.out.println(integer),
+           error -> System.out.println(error.getMessage()),
+           () -> System.out.println("Done")
+   );
+
+6. ReactiveSources.intNumbersFlux().subscribe( // slightly different way of doing error handling and completion
+           System.out::println,
+           System.err::println,
+           () -> System.out.println("Done")
+   );
+
