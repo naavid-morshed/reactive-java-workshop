@@ -16,6 +16,12 @@ public class Exercise3 {
         System.out.println("List is : " + list);
         System.out.println(list.size());
 
+        ReactiveSources.intNumbersFlux().subscribe(
+                System.out::println,
+                System.err::println,
+                () -> System.out.println("Done")
+        );
+
         System.out.println("Press a key to end");
         System.in.read();
     }
