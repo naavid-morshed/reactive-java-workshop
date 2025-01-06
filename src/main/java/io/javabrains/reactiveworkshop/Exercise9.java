@@ -10,9 +10,9 @@ public class Exercise9 {
         // Use ReactiveSources.intNumbersFlux()
 
         // Print size of intNumbersFlux after the last item returns
-//        ReactiveSources.intNumbersFlux()
-//                .count()
-//                .subscribe(System.out::println);
+        ReactiveSources.intNumbersFlux()
+                .count()
+                .subscribe(System.out::println);
 
         // Collect all items of intNumbersFlux into a single list and print it
         ReactiveSources.intNumbersFlux()
