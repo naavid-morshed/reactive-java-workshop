@@ -11,6 +11,6 @@ public class CustomSubscriber<T> extends BaseSubscriber<T> {
 
     public void hookOnNext(T value) {
         System.out.println(value);
-        request(1);
+        request(1); // okay to push signal
     }
 }
