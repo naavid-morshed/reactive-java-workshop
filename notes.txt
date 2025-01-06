@@ -7,17 +7,17 @@
 04. blockFirst() and blockLast() used on Flux.
 
 05. // just like RxJS
-   ReactiveSources.intNumberMono().subscribe(
+    ReactiveSources.intNumberMono().subscribe(
            integer -> System.out.println(integer),
            error -> System.out.println(error.getMessage()),
            () -> System.out.println("Done")
-   );
+    );
 
 06. ReactiveSources.intNumbersFlux().subscribe( // slightly different way of doing error handling and completion
            System.out::println,
            System.err::println,
            () -> System.out.println("Done")
-   );
+    );
 
 07. Use .log() after a flux/mono to debug
 
@@ -31,5 +31,10 @@
 
 12. .defaultIfEmpty(), works when no value found in a flux
 
-13.
+13. .doFinally(), can be used after a flux completes finally or when flux returns an error
+    it returns a signalType object, signalType tells whether flux completed or not.
+
+14. .buffer(n), will return a flux of list of n items at a time
+
+15.
 
