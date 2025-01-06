@@ -23,7 +23,7 @@ public class Exercise9 {
         ReactiveSources.intNumbersFlux()
                 .buffer(2)
                 .map(integers -> integers.get(0) + integers.get(1))
-                .collectList()
+//                .collectList()
                 .subscribe(System.out::println);
 
         System.out.println("Press a key to end");
