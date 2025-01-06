@@ -14,17 +14,18 @@ public class Exercise7 {
                 .filter(i -> i > 5)
                 .subscribe(System.out::println);
 
-        // Print 10 times each value from intNumbersFlux that's greater than 5
+        // Print value * 10 from intNumbersFlux that's greater than 5
         ReactiveSources.intNumbersFlux()
                 .filter(i -> i > 5)
-                .repeat(10)
+                .map(integer -> integer * 10)
+//                .repeat(10) not needed for this problem
                 .subscribe(System.out::println);
 
-        // Print 10 times each value from intNumbersFlux for the first 3 numbers emitted that's greater than 5
+        // Print value * 10 from intNumbersFlux for the first 3 numbers emitted that's greater than 5
         ReactiveSources.intNumbersFlux()
                 .filter(i -> i > 5)
                 .take(3)
-                .repeat(10)
+                .map(integer -> integer * 10)
                 .subscribe(System.out::println);
 
         // Print each value from intNumbersFlux that's greater than 20. Print -1 if no elements are found
@@ -51,5 +52,4 @@ public class Exercise7 {
         System.out.println("Press a key to end");
         System.in.read();
     }
-
 }
